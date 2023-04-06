@@ -1,61 +1,82 @@
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0;
     font-family: 'Lato', sans-serif;
-    background: #222;
-    background-image:  url('https://source.unsplash.com/1920x1080/?landscape');
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
     font-size: 120%;
 }
-.card{
+
+/*----------Sidebar---------*/
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #000000d0;
     color: white;
     padding: 2em;
     border-radius: 30px;
     width: 100%;
-    max-width: 420px;
+    max-width: 25px;
     margin: 1em;
 }
-.search{
+.icons{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-top: 110px;
 }
-button{
+.icons .text{
+    margin-bottom: 2em;
+    margin-top: 8px;
+}
+.icons .favorites{
+    margin-bottom: 2em;
+    margin-top: 8px;
+}
+.weather-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    max-height: 240px;
     margin: 0.5em;
-    border: none;
-    outline: none;
-    border-radius: 50%;
-    height: 44px;
-    width: 44px;
-    background: #7c7c7c2b;
-    color: white;
-}
-button:hover{
-    background: #7c7c7c6b;;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-input.search-bar{
-    border: none;
-    outline: none;
-    padding: 0.4em 1em;
-    border-radius: 24px;
-    background: #7c7c7c2b;
-    color: white;
-    font-family: inherit;
-    font-size: 105%;
-    width: calc(100% - 80px);
-}
-h1.temp{
-    margin: 0;
-    margin-bottom: 0.4em;
+    margin-top: 1em;
 }
 .flex{
     display: flex;
     align-items: center;
+}
+.weather-card img{
+    margin-left: 70%;
+}
+/*----------Searchbar---------*/
+.searchcard{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-left: 7.5em;
+    margin-top: 1em;
+}
+input.search-bar{
+    border: none;
+    outline: none;
+    padding: 0.8em 1em;
+    border-radius: 12px;
+    background: #000000d0;
+    color: white;
+    font-family: inherit;
+    font-size: 95%;
+    width: 814px;
+}
+h1.temp{
+    margin: 0;
+    margin-bottom: 0.4em;
 }
 .description{
     text-transform: capitalize;
@@ -73,4 +94,63 @@ h1.temp{
     position: absolute;
     top: 0;
     left: 20px;
+}
+/*----------Air Conditions---------*/
+.weather-conditions{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000000d0;
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    width: 773px;
+    height: 200px;
+    margin: 0.5em;
+    bottom: 0;
+    margin-left: 7.5em;
+    margin-bottom: 1em;
+}
+.leftside{
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+    margin-bottom: -1.5em;
+    margin-left: -8em;
+}
+.rightside{
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+    margin-right: 6em;
+    margin-bottom: -1.5em;
+}
+.title{
+    position: absolute;
+    top: 0;
+}
+.weather-conditions p{
+    font-size: 18px;
+    font-weight: lighter;
+    margin-bottom: 0.3em;
+}
+.weather-conditions div{
+    font-size: 28px;
+    font-weight: bold;
+}
+.lefticons{
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+    row-gap: 54px;
+    margin-bottom: -0.78em;
+    margin-right: -2.3em;
+}
+.righticons{
+    display: flex;
+    flex-direction: column;
+    margin-right: -10.3em;
+    row-gap: 54px;
+    margin-bottom: -0.78em;
 }
