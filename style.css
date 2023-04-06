@@ -3,9 +3,10 @@ body{
     height: 100vh;
     margin: 0;
     font-family: 'Lato', sans-serif;
-    background: linear-gradient(135deg, #00feba, #5b548a);
+    background: white; 
     color: #fff;
     font-size: 120%;
+    background-image:  url('https://source.unsplash.com/1920x1080/?landscape');
 }
 
 /*----------Sidebar---------*/
@@ -13,8 +14,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #000000d0;
-    color: white;
+    background: #eaecefd0;
+    color: black;
     padding: 2em;
     border-radius: 30px;
     width: 100%;
@@ -35,11 +36,12 @@ body{
     margin-bottom: 2em;
     margin-top: 8px;
 }
+/*----------Weather---------*/
 .weather-card{
+    font-family: inherit;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 2em;
     border-radius: 30px;
     width: 100%;
@@ -50,10 +52,44 @@ body{
 }
 .flex{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: first baseline;
+    
+}
+.flex2{
+    display: flex;
+    gap: 200%;
 }
 .weather-card img{
-    margin-left: 70%;
+    object-fit:scale-down;
+}
+.weather-card h1{
+    font-size: 48px;
+}
+.weather-card h2{
+    font-size: 36px;
+}
+h1.temp{
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+.description{
+    text-transform: capitalize;
+    margin-left: 8px;
+    color: #a2a7af;
+}
+.weather.loading{
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+.weather.loading:after{
+    visibility: visible;
+    content: "Loading data.";
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 20px;
 }
 /*----------Searchbar---------*/
 .searchcard{
@@ -68,89 +104,159 @@ input.search-bar{
     outline: none;
     padding: 0.8em 1em;
     border-radius: 12px;
-    background: #000000d0;
-    color: white;
+    background: #eaecefd0;
+    color: rgb(0, 0, 0);
     font-family: inherit;
     font-size: 95%;
     width: 814px;
 }
-h1.temp{
-    margin: 0;
-    margin-bottom: 0.4em;
-}
-.description{
-    text-transform: capitalize;
-    margin-left: 8px;
-}
-.weather.loading{
-    visibility: hidden;
-    max-height: 20px;
-    position: relative;
-}
-.weather.loading:after{
-    visibility: visible;
-    content: "Loading data.";
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 20px;
-}
 /*----------Air Conditions---------*/
-.weather-conditions{
+.container-conditions{
     position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #000000d0;
-    color: white;
-    padding: 2em;
+    font-family: inherit;
+    background: #eaecefd0;
+    color: rgb(0, 0, 0);
+    padding: 0.3em 2em;
     border-radius: 30px;
-    width: 773px;
-    height: 200px;
+    width: 100%;
+    max-width: 773px;
     margin: 0.5em;
     bottom: 0;
     margin-left: 7.5em;
     margin-bottom: 1em;
 }
-.leftside{
+.weather-conditions{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 0 0.5em 0.5em;
+    column-gap: 20%;
+}
+.media-element1{
     display: flex;
     flex-direction: column;
-    align-items:baseline;
-    margin-bottom: -1.5em;
-    margin-left: -8em;
+    align-items: center;
+    padding: 0.7em;
+    margin-bottom: 2em;
+    margin-left: -5em;
+    row-gap: 1em;
 }
-.rightside{
+.media-element2{
+    margin-top: -1em;
     display: flex;
     flex-direction: column;
-    align-items:baseline;
-    margin-right: 6em;
-    margin-bottom: -1.5em;
+    align-items: center;
+    padding: 0.7em;
+    margin-left: -14em;
 }
-.title{
-    position: absolute;
-    top: 0;
+.weather-conditions #water{
+    margin-left: 2em;
+}
+.weather-conditions #sun{
+    margin-left: 2em;
 }
 .weather-conditions p{
     font-size: 18px;
     font-weight: lighter;
     margin-bottom: 0.3em;
+    color: #828487;
 }
 .weather-conditions div{
     font-size: 28px;
     font-weight: bold;
 }
-.lefticons{
-    display: flex;
-    flex-direction: column;
-    align-items:baseline;
-    row-gap: 54px;
-    margin-bottom: -0.78em;
-    margin-right: -2.3em;
+.title{
+    color: #828487;
 }
-.righticons{
+/*----------Hourly Forecast---------*/
+.container{
+    position: absolute;
+    margin: 0.5em;
+    margin-top: 16em;
+    padding: 0.3em 2em;
+    margin-left: 7.5em;
+    background: #eaecefd0;
+    width: 773px;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+}
+.hourlyforecast{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 14%;
+    gap: 0.7em;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0 0.5em 0.5em;
+}
+.hourlyforecast.active{
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+::-webkit-scrollbar{
+    height: 0.8em;
+}
+::-webkit-scrollbar-track {
+    background: #828487;
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb{
+    background: #353434ba;
+    border-radius: 100vw;
+    
+}
+.media-element{
+    margin-top: -1em;
     display: flex;
     flex-direction: column;
-    margin-right: -10.3em;
-    row-gap: 54px;
-    margin-bottom: -0.78em;
+    align-items: center;
+    padding: 0.7em;
+}
+.media-element > img{
+    inline-size: 140%;
+    object-fit: cover;
+}
+.title2{
+    color: #828487;
+}
+/*----------7-days Forecast---------*/
+.container-7days{
+    position: absolute;
+    margin: 0.5em;
+    margin-top: 3em;
+    margin-bottom: -2em;
+    padding: 0.3em 2em;
+    right: 0;
+    background: #eaecefd0;
+    width: 100%;
+    max-width: 773px;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+}
+.sevenday-forecast{
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: 12.5%;
+    gap: 0.7em;
+    overflow-y: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0 0.5em 0.5em;
+}
+.media-element3{
+    margin-top: -0.25em;
+    margin-bottom: -1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    padding: 0.7em;
+}
+.midelements{
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+.seventitle{
+    margin-left: 1.4em;
+    color: #828487;
 }
