@@ -32,6 +32,7 @@ slider.addEventListener("mousemove", (e) => {
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
 const countryEl = document.getElementById('city');
+const searchEl = document.getElementById('search-bar');
 const currentWeatherItemsEl = document.getElementById('current-weather-items');
 const currentForecastEl = document.getElementById('current-forecast');
 const weatherForecastEl = document.getElementById('weather-forecast');
@@ -39,11 +40,26 @@ const hourlyForecastEl = document.getElementById('hourly-forecast');
 const currentTempEl = document.getElementById('current-temp');
 
 
-
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const API_KEY ='aedaa0616d345b9f3724c29de166f186';
+
+navigator.geolocation.getCurrentPosition((position) => {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        
+        getWeatherData(data.name);
+    })
+}, (error) => {
+    console.error(error);
+   
+    getWeatherData('Oradea');
+});
 
 setInterval(() => {
     const time = new Date();
@@ -51,32 +67,40 @@ setInterval(() => {
     const hour = time.getHours();
 }, 1000);
 
-getWeatherData()
-function getWeatherData () {
-        
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=Oradea&units=metric&appid=${API_KEY}`)
+searchEl.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        const city = searchEl.value;
+        getWeatherData(city);
+    }
+});
+
+function getWeatherData (city) {
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`)
     .then(response => response.json())
+    .then(data1 => {
+    const lat = data1.coord.lat;
+    const lon = data1.coord.lon;
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${API_KEY}`)
+    .then(res => res.json())
     .then(data => {
-    const lat = data.coord.lat;
-    const lon = data.coord.lon;
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
 
     console.log(data)
-    showWeatherData(data);
+    showWeatherData(data, city);
     })
-
 });
 }
 
-function showWeatherData (data){
+function showWeatherData (data, city){
     const background = data.current.weather[0].icon;
-    const name = data;
-
-    document.querySelector(".city").innerText = name;
 
     let {humidity, pressure, dew_point, wind_speed} = data.current;
 
-    countryEl.innerHTML = data.lat + 'N ' + data.lon + 'E'
+    countryEl.innerHTML = city;
+
+    currentTempEl.innerHTML = `${data.current.temp}&#176;C`;
+
+    
 
     switch(background){
         case '01n':
@@ -90,7 +114,7 @@ function showWeatherData (data){
     currentForecastEl.innerHTML = `
     <div class="current-forecast">
                 <div class="flex">
-                    <h2 id="country" class="country">Oradea</h2>
+                    <h2 id="city" class="city">${city}</h2>
                     <div class="description">${data.current.weather[0].description}</div>
                     <h1 class="temperature">${data.current.temp}&#176;C</h1>
                 </div>
@@ -163,7 +187,16 @@ function showWeatherData (data){
             
             `
         }
-    }) 
+    })
+    
+    document.querySelector(".search-bar").addEventListener("keyup", function (event) {
+        if(event.key == "Enter") {
+            const searchValue = document.getElementById('search-bar').value;
+        document.getElementById('search-bar').value = '';
+        console.log(searchValue);
+        getWeatherData(searchValue);
+        }
+    });
 
     weatherForecastEl.innerHTML = otherDayForcast;
 
