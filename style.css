@@ -103,7 +103,7 @@ h1.temp{
 .hourly-forecast{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 14%;
+    grid-auto-columns: 12%;
     gap: 0.7em;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
@@ -158,21 +158,19 @@ h1.temp{
 .current-weather-items{
     display: grid;
     grid-auto-flow: row;
-    grid-auto-rows: 40%;
+    grid-auto-rows: 30%;
     gap: 1.4em;
     padding: 0 0.5em 0.5em;
-    margin-bottom: 1em;
 }
 .pair1{
     display: flex;
     flex-direction: row;
     gap: 50%;
-    margin-top: -0.2em;
 }
 .pair2{
     display: flex;
     flex-direction: row;
-    gap: 44%;
+    gap: 45%;
 }
 .weather-item{
     display: flex;
@@ -209,7 +207,7 @@ h1.temp{
     color: rgb(0, 0, 0);
     border-radius: 30px;
     box-sizing: border-box;
-
+    margin-bottom: 0.5em;
 }
 .date-container{
     display: grid;
@@ -231,6 +229,16 @@ h1.temp{
     justify-content:space-between;
     padding: 0.3em;
 
+}
+.day{
+    display: flex;
+    
+    margin-right: 10%;
+    
+}
+.day2{
+    display: flex;
+   
 }
 .midelements{
     display: flex;

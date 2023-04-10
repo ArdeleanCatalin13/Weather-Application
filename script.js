@@ -70,6 +70,10 @@ function getWeatherData () {
 
 function showWeatherData (data){
     const background = data.current.weather[0].icon;
+    const name = data;
+
+    document.querySelector(".city").innerText = name;
+
     let {humidity, pressure, dew_point, wind_speed} = data.current;
 
     countryEl.innerHTML = data.lat + 'N ' + data.lon + 'E'
@@ -162,4 +166,6 @@ function showWeatherData (data){
     }) 
 
     weatherForecastEl.innerHTML = otherDayForcast;
+
+    
 }
