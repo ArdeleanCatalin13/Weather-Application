@@ -1,11 +1,22 @@
 body{
-
     margin: 0;
     font-family: 'Lato', sans-serif;
     background: white; 
     color: #fff;
     font-size: 120%;
-    background-image:  url('https://source.unsplash.com/1920x1080/?landscape');
+    background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+:root{
+    --primary-color:#eaecefd0;
+    --font-color: rgb(0, 0, 0);
+}
+.night-mode{
+    --primary-color:#1e1f21d0;
+    --font-color: rgb(255, 255, 255);
 }
 
 .container{
@@ -32,8 +43,8 @@ input.search-bar{
     outline: none;
     padding: 0.8em 1em;
     border-radius: 12px;
-    background: #eaecefd0;
-    color: rgb(0, 0, 0);
+    background: var(--primary-color);
+    color: var(--font-color);
     font-family: inherit;
     font-size: 105%;
     width: 100%;
@@ -46,7 +57,7 @@ input.search-bar{
     grid-column-start: 1;
     grid-column-end: 3;
     font-family: inherit;
-    color: rgb(0, 0, 0);
+    color: var(--font-color);
     padding: 0 2em;
     width: 100%;
     box-sizing: border-box;
@@ -80,6 +91,20 @@ h1.temp{
     color: #414142;
     margin-left: 8px;
 }
+.favorite{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.favorite-button{
+    border: none;
+    background-color: transparent;
+    color: gray;
+    font-size: 50px;
+}
+.favorite-button:hover{
+    cursor: pointer;
+}
 /*----------Hourly Forecast---------*/
 .hourly-forecast-card{
     font-family: inherit;
@@ -91,10 +116,10 @@ h1.temp{
     margin-right: 1em;
     padding: 0.3em 2em;
     margin-bottom: 0.5em;
-    background: #eaecefd0;
+    background: var(--primary-color);
     width: 100%;
     /*max-width: 873px;*/
-    color: rgb(0, 0, 0);
+    color: var(--font-color);
     border-radius: 30px;
     box-sizing: border-box;
 
@@ -146,8 +171,8 @@ h1.temp{
     grid-column-start: 1;
     grid-column-end: 3;
     font-family: inherit;
-    background: #eaecefd0;
-    color: rgb(0, 0, 0);
+    background: var(--primary-color);
+    color: var(--font-color);
     padding: 0.3em 2em;
     border-radius: 30px;
     width: 100%;
@@ -201,9 +226,9 @@ h1.temp{
     grid-column-start: 3;
     grid-column-end: 4;
     padding: 0.3em 2em;
-    background: #eaecefd0;
+    background: var(--primary-color);;
     width: 100%;
-    color: rgb(0, 0, 0);
+    color: var(--font-color);
     border-radius: 30px;
     box-sizing: border-box;
     margin-bottom: 0.5em;

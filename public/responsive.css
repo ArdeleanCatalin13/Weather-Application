@@ -1,4 +1,4 @@
-@media only screen and (max-width: 480px)  {
+@media only screen and (max-width: 580px)  {
     .container{
         grid-template: 0.2fr 1.7fr 1.5fr 1.5fr 1.5fr / 1fr;
         grid-template-areas: 
@@ -24,7 +24,12 @@
         overscroll-behavior-inline: contain;
         padding: 0 0.5em 0.5em;
     }
-    
+    .pair1{
+        margin-right: 0.6em;
+    }
+    .pair2{
+        margin-right: 1em;
+    }
     body{
         background: rgb(202, 214, 219);
     }
@@ -33,5 +38,23 @@
     }
     .temp{
         margin-left: 10%;
+    }
+
+}
+@media only screen and (max-width: 1024px)  {
+    .container{
+        grid-template: 0.2fr 1.7fr 1.5fr 1.5fr 1.5fr / 1fr;
+        grid-template-areas: 
+        "search-bar-card"
+        "current-weather-card"
+        "hourly-forecast-card"
+        "air-conditions-card"
+        "seven-day-forecast-card";
+    }
+    .seven-day-forecast-card{
+        grid-column: 1 / span 1;
+        grid-row:5 / span 1;
+        margin-top: 0.5em;
+        margin: 0.5em;
     }
 }

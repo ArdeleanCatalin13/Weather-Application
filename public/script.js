@@ -28,6 +28,22 @@ slider.addEventListener("mousemove", (e) => {
     
 });
 
+var currentTime = new Date().getHours();
+if (document.body) {
+    if (20 <= currentTime && currentTime < 7) {
+        document.body.classList.toggle("night-mode");
+    }
+}
+
+var btn = document.getElementById('favorite-button')
+function Toggle(){
+    if(btn.style.color == "red" ){
+        btn.style.color = "gray";
+    } else{
+        btn.style.color = "red";
+    }
+}
+
 
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
@@ -103,17 +119,68 @@ function showWeatherData (data, city){
 
     switch(background){
         case '01n':
-            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1496467606013-2b7b9caa2a67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1604736186034-f203a574c1b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80')";
             break;
+        case '02n':
+            document.body.style.backgroundImage = "url('')";
+            break;
+        case '03n':
+            document.body.style.backgroundImage = "url('')";
+            break;    
         case '04n':
             document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1604083142449-79b1babd12d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
             break;
+        case '09n':
+            document.body.style.backgroundImage = "url('')";
+            break;  
+        case '10n':
+            document.body.style.backgroundImage = "url('')";
+            break;  
+        case '11n':
+            document.body.style.backgroundImage = "url('')";
+            break;
+        case '13n':
+            document.body.style.backgroundImage = "url('')";
+            break;   
+        case '50n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
+            break;
+        case '01d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1627759929352-e4ad6ff6d55e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80')";
+            break;   
+        case '02d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')";
+            break;
+        case '03d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')";
+            break;    
+        case '04d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')";
+            break;
+        case '09d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1493314894560-5c412a56c17c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
+            break;  
+        case '10d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1493314894560-5c412a56c17c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
+            break;  
+        case '11d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1600313405742-b6ef6b85e303?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80')";
+            break;
+        case '13d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1491002052546-bf38f186af56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1508&q=80')";
+            break;   
+        case '50d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
+            break;  
     }
 
     currentForecastEl.innerHTML = `
     <div class="current-forecast">
                 <div class="flex">
+                <div class="favorite">
                     <h2 id="city" class="city">${city}</h2>
+                    <button class="favorite-button"><i class="uil uil-favorite"></i></button>
+                </div>
                     <div class="description">${data.current.weather[0].description}</div>
                     <h1 class="temperature">${data.current.temp}&#176;C</h1>
                 </div>
