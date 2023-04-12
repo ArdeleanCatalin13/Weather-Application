@@ -1,7 +1,7 @@
 @media only screen and (max-width: 580px)  {
     .container{
         grid-template: 0.2fr 1.7fr 1.5fr 1.5fr 1.5fr / 1fr;
-        grid-template-areas: 
+        grid-template-areas:
         "search-bar-card"
         "current-weather-card"
         "hourly-forecast-card"
@@ -44,7 +44,7 @@
 @media only screen and (max-width: 1024px)  {
     .container{
         grid-template: 0.2fr 1.7fr 1.5fr 1.5fr 1.5fr / 1fr;
-        grid-template-areas: 
+        grid-template-areas:
         "search-bar-card"
         "current-weather-card"
         "hourly-forecast-card"

@@ -113,74 +113,69 @@ function showWeatherData (data, city){
     countryEl.innerHTML = city;
     currentTempEl.innerHTML = `${data.current.temp}&#176;C`;
 
-    
-    window.addEventListener("load", () => {
-        switch (background) {
-            case '01n':
-                body.classList.add('weather-bg-01n');
-                break;
-            case '02n':
-                body.classList.add('weather-bg-02n');
-                break;
-            case '03n':
-                body.classList.add('weather-bg-03n');
-                break;    
-            case '04n':
-                body.classList.add('weather-bg-04n');
-                break;
-            case '09n':
-                body.classList.add('weather-bg-09n');
-                break;  
-            case '10n':
-                body.classList.add('weather-bg-10n');
-                break;  
-            case '11n':
-                body.classList.add('weather-bg-11n');
-                break;
-            case '13n':
-                body.classList.add('weather-bg-13n');
-                break;   
-            case '50n':
-                body.classList.add('weather-bg-50n');
-                break;
-            case '01d':
-                body.classList.add('weather-bg-01d');
-                break;   
-            case '02d':
-                body.classList.add('weather-bg-02d');
-                break;
-            case '03d':
-                body.classList.add('weather-bg-03d');
-                break;    
-            case '04d':
-                body.classList.add('weather-bg-04d');
-                break;
-            case '09d':
-                body.classList.add('weather-bg-09d');
-                break;  
-            case '10d':
-                body.classList.add('weather-bg-10d');
-                break;  
-            case '11d':
-                body.classList.add('weather-bg-11d');
-                break;
-            case '13d':
-                body.classList.add('weather-bg-13d');
-                break;   
-            case '50d':
-                body.classList.add('weather-bg-50d');
-                break;  
-        }
 
-    });
-       
+    switch(background){
+        case '01n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1604736186034-f203a574c1b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80')";
+            break;
+        case '02n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1536183922588-166604504d5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')";
+            break;
+        case '03n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1536183922588-166604504d5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')";
+            break;    
+        case '04n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1536183922588-166604504d5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')";
+            break;
+        case '09n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1514277264166-8dc31e12b509?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80')";
+            break;  
+        case '10n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1514277264166-8dc31e12b509?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80')";
+            break;  
+        case '11n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1599070221195-bf2801877d7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')";
+            break;
+        case '13n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/25/snow-light.JPG?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80')";
+            break;   
+        case '50n':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
+            break;
+        case '01d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1627759929352-e4ad6ff6d55e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80')";
+            break;   
+        case '02d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1603437873662-dc1f44901825?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')";
+            break;
+        case '03d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')";
+            break;    
+        case '04d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')";
+            break;
+        case '09d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1493314894560-5c412a56c17c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
+            break;  
+        case '10d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1493314894560-5c412a56c17c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
+            break;  
+        case '11d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1600313405742-b6ef6b85e303?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80')";
+            break;
+        case '13d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1491002052546-bf38f186af56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1508&q=80')";
+            break;   
+        case '50d':
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1476362555312-ab9e108a0b7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')";
+            break;  
+    }
+
+        
     currentForecastEl.innerHTML = `
     <div class="current-forecast">
                 <div class="flex">
-                <div class="favorite">
                     <h2 id="city" class="city">${city}</h2>
-                    <button onclick="Toggle()" class="favorite-button" id="favorite-button"><i class="uil uil-favorite"></i></button>
-                </div>
                     <div class="description">${data.current.weather[0].description}</div>
                     <h1 class="temperature">${data.current.temp}&#176;C</h1>
                 </div>
@@ -267,8 +262,4 @@ function showWeatherData (data, city){
     weatherForecastEl.innerHTML = otherDayForcast;
 
     
-}
-var width = (window.innerWidth > 580) ? window.innerWidth : screen.width;
-if (width < 550){
-    document.body.style.background = rgb(202, 214, 219);
 }
